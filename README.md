@@ -42,11 +42,6 @@ The goal of this project is to deploy a **highly available and load-balanced web
 
 ---
 
-## Architecture
-
-![Architecture Diagram](<img width="761" height="641" alt="image" src="https://github.com/user-attachments/assets/e103d21c-5985-480a-bc53-9792a5ded08e" />
-)
-
 **Components:**
 
 - **VPC** – isolates the network
