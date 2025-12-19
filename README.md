@@ -62,7 +62,7 @@ Before deploying this project, you need:
 
 ## Step-by-Step Deployment
 
-The deployment process is fully automated in the create_vpc.py script. Here is a breakdown of what happens:
+
 
 ## Step 1: Create the VPC (CDA02_Project_VPC)
 
@@ -70,18 +70,22 @@ Uses the CIDR 10.10.0.0/16
 
 Enables DNS support and hostnames
 
+
 ## Step 2: Create Public Subnets
 
-Creates 3 subnets, each in a different Availability Zone (CDA02_Project_FirstSubnet), (CDA02_Project_SecondSubnet),(CDA02_Project_ThirdSubnet)
+Creates 3 subnets, each in a different Availability Zones 
+
+(CDA02_Project_FirstSubnet), (CDA02_Project_SecondSubnet),(CDA02_Project_ThirdSubnet)
 
 Enables automatic public IP assignment
 
-## Step 3: Create an Internet Gateway (CDA02_IGW_Project)
-Creates 3 subnets, each in a different Availability Zone (CDA02_Project_FirstSubnet), (CDA02_Project_SecondSubnet),(CDA02_Project_ThirdSubnet)
 
-Attaches the IGW to the VPC
+## Step 3: Create an Internet Gateway (CDA02_IGW_Project)
+
+Attached the IGW to the VPC
 
 Provides internet access for public subnets
+
 
 ## Step 4: Configure Route Table (rtb-09adfe4212e743774)
 
@@ -114,6 +118,7 @@ systemctl enable httpd
 echo “<h1> WELCOME TO MY PURE IMAGINATION (private IP address) $(hostname -f)</h1>” > /var/www/html/index.html
 
 ```
+
 ## Step 7: Create Auto Scaling Group (CDA02_Project_ASG)
 
 Launches EC2 instances from the Launch Template
