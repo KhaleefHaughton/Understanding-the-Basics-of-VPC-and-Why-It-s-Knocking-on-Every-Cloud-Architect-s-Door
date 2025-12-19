@@ -73,7 +73,7 @@ Enables DNS support and hostnames
 
 ## Step 2: Create Public Subnets (CDA02_Project_FirstSubnet), (CDA02_Project_SecondSubnet),(CDA02_Project_ThirdSubnet)
 
-Creates 3 subnets, each in a different Availability Zones
+Created 3 subnets, each in a different Availability Zones
 
 Enables automatic public IP assignment
 
@@ -87,7 +87,7 @@ Provides internet access for public subnets
 
 ## Step 4: Configure Route Table (rtb-09adfe4212e743774)
 
-Creates a route table for the VPC 
+Created a route table for the VPC 
 
 Adds a default route to the Internet Gateway
 
@@ -119,7 +119,7 @@ echo “<h1> WELCOME TO MY PURE IMAGINATION (private IP address) $(hostname -f)<
 
 ## Step 7: Create Auto Scaling Group (CDA02_Project_ASG)
 
-Launches EC2 instances from the Launch Template
+Launched EC2 instances from the Launch Template
 
 Sets min and max instance counts
 
