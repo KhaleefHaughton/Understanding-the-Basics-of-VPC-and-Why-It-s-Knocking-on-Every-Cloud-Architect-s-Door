@@ -60,7 +60,7 @@ Before deploying this project, you need:
    pip install boto3
 
 
-## Step-by-Step Deployment
+Step-by-Step Deployment
 
 
 
