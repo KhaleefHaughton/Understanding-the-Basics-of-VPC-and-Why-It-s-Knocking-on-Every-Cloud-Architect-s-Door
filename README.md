@@ -29,7 +29,7 @@ The setup follows the Medium article ["Ping Ping, Who’s There? It’s Your VPC
 
 ---
 
-## Project Overview
+## 1. Project Overview
 
 The goal of this project is to deploy a **highly available and load-balanced web application** in AWS. The project accomplishes:
 
@@ -42,7 +42,7 @@ The goal of this project is to deploy a **highly available and load-balanced web
 
 ---
 
-**Components:**
+## 2. Architecture Components
 
 - **VPC** – isolates the network
 - **Subnets** – public subnets in multiple Availability Zones
@@ -55,7 +55,7 @@ The goal of this project is to deploy a **highly available and load-balanced web
 
 ---
 
-## Prerequisites
+## 3. Prerequisites
 
 Before deploying this project, you need:
 
