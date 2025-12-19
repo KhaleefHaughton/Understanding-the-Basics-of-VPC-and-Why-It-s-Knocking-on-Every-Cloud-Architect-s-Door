@@ -71,10 +71,9 @@ Uses the CIDR 10.10.0.0/16
 Enables DNS support and hostnames
 
 
-## Step 2: Create Public Subnets
+## Step 2: Create Public Subnets (CDA02_Project_FirstSubnet), (CDA02_Project_SecondSubnet),(CDA02_Project_ThirdSubnet)
 
-Creates 3 subnets, each in a different Availability Zones (CDA02_Project_FirstSubnet), (CDA02_Project_SecondSubnet),(CDA02_Project_ThirdSubnet)
-
+Creates 3 subnets, each in a different Availability Zones
 
 Enables automatic public IP assignment
 
