@@ -19,13 +19,7 @@ The setup follows the Medium article ["Ping Ping, Who’s There? It’s Your VPC
 1. [Project Overview](#project-overview)
 2. [Architecture](#architecture)
 3. [Prerequisites](#prerequisites)
-4. [Setup Instructions](#setup-instructions)
-5. [Step-by-Step Deployment](#step-by-step-deployment)
-6. [Usage](#usage)
-7. [File Structure](#file-structure)
-8. [Troubleshooting](#troubleshooting)
-9. [License](#license)
-10. [Acknowledgements](#acknowledgements)
+4. [Step-by-Step Deployment](#step-by-step-deployment)
 
 ---
 
@@ -64,3 +58,76 @@ Before deploying this project, you need:
 3. **boto3** library installed:  
    ```bash
    pip install boto3
+
+
+## Step-by-Step Deployment
+
+The deployment process is fully automated in the create_vpc.py script. Here is a breakdown of what happens:
+
+## Step 1: Create the VPC (CDA02_Project_VPC)
+
+Uses the CIDR 10.10.0.0/16
+
+Enables DNS support and hostnames
+
+## Step 2: Create Public Subnets
+
+Creates 3 subnets, each in a different Availability Zone (CDA02_Project_FirstSubnet), (CDA02_Project_SecondSubnet),(CDA02_Project_ThirdSubnet)
+
+Enables automatic public IP assignment
+
+## Step 3: Create an Internet Gateway (CDA02_IGW_Project)
+Creates 3 subnets, each in a different Availability Zone (CDA02_Project_FirstSubnet), (CDA02_Project_SecondSubnet),(CDA02_Project_ThirdSubnet)
+
+Attaches the IGW to the VPC
+
+Provides internet access for public subnets
+
+## Step 4: Configure Route Table (rtb-09adfe4212e743774)
+
+Creates a route table for the VPC 
+
+Adds a default route to the Internet Gateway
+
+Associates route table with public subnets
+
+
+## Step 5: Create Security Groups
+
+WebServerSG: allows HTTP from ALB only
+
+LoadBalancerSG: allows HTTP from anywhere
+
+
+## Step 6: Launch Template (CDA02_Launch_Temp)
+
+Defines the EC2 instance configuration
+
+Includes user-data script for Apache setup
+
+```
+#!/bin/bash
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo “<h1> WELCOME TO MY PURE IMAGINATION (private IP address) $(hostname -f)</h1>” > /var/www/html/index.html
+
+```
+## Step 7: Create Auto Scaling Group (CDA02_Project_ASG)
+
+Launches EC2 instances from the Launch Template
+
+Sets min and max instance counts
+
+Associates instances with the public subnets
+
+
+## Step 8: Create Application Load Balancer
+
+Internet-facing ALB distributes traffic to EC2 instances
+
+Added Target group to Load Balancer (CDA02ProjectTGN)
+
+Outputs the DNS name of the ALB for access
+
