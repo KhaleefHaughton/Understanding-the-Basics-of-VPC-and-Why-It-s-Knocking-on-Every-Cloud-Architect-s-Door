@@ -73,9 +73,8 @@ Enables DNS support and hostnames
 
 ## Step 2: Create Public Subnets
 
-Creates 3 subnets, each in a different Availability Zones 
+Creates 3 subnets, each in a different Availability Zones (CDA02_Project_FirstSubnet), (CDA02_Project_SecondSubnet),(CDA02_Project_ThirdSubnet)
 
-(CDA02_Project_FirstSubnet), (CDA02_Project_SecondSubnet),(CDA02_Project_ThirdSubnet)
 
 Enables automatic public IP assignment
 
